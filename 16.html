@@ -1,0 +1,185 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="utf-8">
+<title>AudioGuiaCicerone 16 Palacio de Golfines de Arriba</title>
+<!-- style player -->
+<link rel="stylesheet" href="skin/circle.skin/circle.player.css">
+<!-- FIN style player -->
+<link href="css/jquery.mobile.theme-1.3.2.min.css" rel="stylesheet" type="text/css"/>
+<!-- style propio -->
+<link href="css/CiceGrisMarron.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="themes/AudioguiaCicerone.min.css" />
+<!-- FIN style propio -->
+<link href="css/jquery.mobile.structure-1.3.2.min.css" rel="stylesheet" type="text/css"/>
+<!-- Extra Codiqa features -->
+<link rel="stylesheet" href="css/codiqa.ext.css"> 
+<script src="js/jquery-1.6.4.min.js" type="text/javascript"></script>
+<script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+<!-- Extra Codiqa features -->
+  <script src="js/codiqa.ext.js"></script>
+<script src="map/jquery.mobile-1.3.2.min.map" type="text/javascript"></script>
+<script src="js/jquery.mobile-1.3.2.min.js" type="text/javascript"></script>
+<script src="js/background_adaptable.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<!-- Player -->
+<script type="text/javascript" src="js/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="js/jquery.transform2d.js"></script>
+<script type="text/javascript" src="js/jquery.grab.js"></script>
+<script type="text/javascript" src="js/mod.csstransforms.min.js"></script>
+<script type="text/javascript" src="js/circle.player.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+
+$(document).ready(function(){
+
+	/*
+	 * Instance CirclePlayer inside jQuery doc ready
+	 *
+	 * CirclePlayer(jPlayerSelector, media, options)
+	 *   jPlayerSelector: String - The css selector of the jPlayer div.
+	 *   media: Object - The media object used in jPlayer("setMedia",media).
+	 *   options: Object - The jPlayer options.
+	 *
+	 * Multiple instances must set the cssSelectorAncestor in the jPlayer options. Defaults to "#cp_container_1" in CirclePlayer.
+	 *
+	 * The CirclePlayer uses the default supplied:"m4a, oga" if not given, which is different from the jPlayer default of supplied:"mp3"
+	 * Note that the {wmode:"window"} option is set to ensure playback in Firefox 3.6 with the Flash solution.
+	 * However, the OGA format would be used in this case with the HTML solution.
+	 */
+
+	var myCirclePlayer = new CirclePlayer("#jquery_jplayer_1",
+	{
+		m4a: "https://dl.dropboxusercontent.com/u/4103763/audiosCICE/Mezclado/16%20ok.mp3",
+		oga: ""
+	}, {
+		cssSelectorAncestor: "#cp_container_1",
+		swfPath: "js",
+		wmode: "window",
+		keyEnabled: true
+	});
+});
+//]]>
+</script>
+<!-- Fin Player -->
+</head> 
+<body>
+<div data-role="page" id="pageM16" style="background-image:url(images/fondos_papel.jpg)" data-ajax="false">
+<div data-role="header" data-position="fixed">
+    <div id="menuprincipal" data-role="navbar" data-iconos="top" class="menubar">
+            <ul>
+                <li>
+                    <a href="index.html" data-ajax="false" data-transition="fade" data-theme="a" data-icon="star"
+                    class="ui-btn-active ui-state-persist">
+                        AudioGuía
+                    </a>
+                </li>
+                <li>
+                    <a href="glosario.html" data-ajax="false" data-transition="fade" data-theme="a" data-icon="gear">
+                        Glosario
+                    </a>
+                </li>
+                <li>
+                    <a href="mapa.html" data-ajax="false" data-transition="fade" data-theme="a" data-icon="bars">
+                        Mapa
+                    </a>
+                </li>
+                <li>
+                    <a href="info.html" data-ajax="false" data-transition="fade" data-theme="a" data-icon="info">
+                        info
+                    </a>
+                </li>
+            </ul>
+        </div>		
+	</div>
+<div class="ui-grid-a">
+    <div class="ui-block-a"><div id="jquery_jplayer_1" class="cp-jplayer"></div>
+
+			<!-- The container for the interface can go where you want to display it. Show and hide it as you need. -->
+
+			<div id="cp_container_1" class="cp-container">
+				<div class="cp-buffer-holder"> <!-- .cp-gt50 only needed when buffer is > than 50% -->
+					<div class="cp-buffer-1"></div>
+					<div class="cp-buffer-2"></div>
+				</div>
+				<div class="cp-progress-holder"> <!-- .cp-gt50 only needed when progress is > than 50% -->
+					<div class="cp-progress-1"></div>
+					<div class="cp-progress-2"></div>
+				</div>
+				<div class="cp-circle-control"></div>
+				<ul class="cp-controls">
+					<li><a class="cp-play" tabindex="1">play</a></li>
+					<li><a class="cp-pause" style="display:none;" tabindex="1">pause</a></li> <!-- Needs the inline style here, or jQuery.show() uses display:inline instead of display:block -->
+				</ul>
+			</div>
+</div>
+    <div class="ui-block-b"><div class="" id="EntradillaInicio" style="height:150px">
+      <h1 class="ui-btn-down-a">16 Palacio de los Golfines de Arriba</h1>
+    </div>
+    <a href="#popupMap" data-rel="popup" data-role="button" data-theme="a" data-inline="true" data-transition="pop">Ver a pie de calle</a>
+<div data-role="popup" id="popupMap" data-overlay-theme="a" data-theme="a" data-corners="false" data-tolerance="15,15">
+
+    <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Cerrar</a>
+
+    <iframe src="mapSV_16.html" data-ajax="false" width="480" height="400" seamless></iframe>
+    </div>
+    </div>
+</div>
+<!-- /grid-a -->
+<div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4>Recomendaciones</h4>
+    <p>El  Palacio de los Golfines de Arriba <strong>es privado</strong>.</p>
+        <p>La planta baja del Palacio está  gestionado por el <strong>Complejo Hostelero &ldquo;Los Golfines&rdquo;</strong>.</p>
+    <p>En el <strong>Restaurante</strong> Palacio  de los Golfines podremos disfrutar de una amplia carta al mismo tiempo que  recreamos nuestra imaginación histórica en uno de los Palacios más importantes  de la ciudad.</p>
+    <p> <strong>Restaurante Palacio de los Golfines</strong>. Horarios:</p>
+        <ul>
+          <li>Martes  a Sábado: <strong>12:00 a  24:00 horas.</strong></li>
+          <li>Domingos: <strong>12:00 a 16:00 horas</strong>. </li>
+    </ul>
+</div>
+        <div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4>Ver texto de Palacio de los Golfines de Arriba</h4>
+        <p data-mce-style="text-align: justify;">Data su construcción de la segunda mitad del siglo XV. Fue levantado por el matrimonio formado por Isabel de la Cerda y García de Golfín, sobre la casa solariega de los Valverde y Cerdá, como <strong>casa fuerte</strong> con torres en sus esquinas, de las que se conservan tres, una situada frente al Postigo de Santa Ana, todavía con un poderoso matacán, y las otras dos con ventanas góticas y blasones de la familia.</p>
+        <p data-mce-style="text-align: justify;">En el centro del palacio se encuentra la <strong>torre del Homenaje</strong>, ordenada en 1506 con el beneplácito de Fernando el Católico y construida en 1513. <strong>La fachada</strong> de este gran edificio tiene como únicos adornos los escudos que vemos encima y debajo del balcón, arriba el de los Golfines y debajo los de la Cerda y Golfines.</p>
+        <p data-mce-style="text-align: justify;">En el <strong>interior</strong> hay un buen número de salones y dependencias, así como seis patios, dos de ellos porticados, cuatro de pequeñas dimensiones y otro --amplísimo y más moderno-- orientado hacia el sur sobre los antiguos corrales. Este es el más conocido de todos, con sus dos alturas y su <a href="#balaustrada" data-rel="popup" data-role="button" data-theme="e" data-inline="true" data-mini="true" data-transition="pop" data-icon="info">balaustrada</a> de clara influencia renacentista. Su interior reúne obras de arte de varios momentos: conjuntos de mobiliario, tapices y pinturas del siglo XVI al XIX, en adecuado orden, lo que permite evocar la vida que llevó esta gran familia extremeña acogida a sus muros durante varios siglos.</p>
+        <p data-mce-style="text-align: justify;">En el <strong>siglo XIX</strong> la Marquesa de Torreorgaz compro este edificio y su hijo, el Marqués del Reyno, lo reformó a su gusto, privándonos totalmente de saber cómo sería este Palacio durante los siglos XVI y XVII.</p>
+        <p data-mce-style="text-align: justify;">El <strong>26 de agosto de 1936</strong> el <strong>General Francisco Franco</strong> eligió este palacio cacereño para establecer su cuartel general y donde fue aclamado Jefe de Estado a finales de septiembre del mismo año antes de su proclamación oficial en Burgos. Todo el edificio pertenece a la familia Churruca y López Montenegro, los cuales habitan actualmente el Palacio.</p>
+        <p data-mce-style="text-align: justify;">Fue declarado <strong>Monumento Histórico-Artístico</strong> el 30 de enero de 1978.</p>
+        <div data-role="popup" id="balaustrada">
+      <p>Conjunto de columnas pequeñas que con los barandales forman las barandillas o antepechos de balcones, azoteas, corredores y escaleras.</p>
+</div>
+
+    </ul>
+    </div>
+<!-- inicio Galeria imagenes popup -->
+<div data-role="content">
+<a href="#popup1" data-rel="popup" data-position-to="window" data-transition="fade"><img class="popphoto" src="images/monumentos/imagenes_pop_16_1.jpg" alt="Cáceres, España" style="width:32%"></a>
+<a href="#popup2" data-rel="popup" data-position-to="window" data-transition="fade"><img class="popphoto" src="images/monumentos/imagenes_pop_16_2.jpg" alt="Cáceres, España" style="width:32%"></a>
+<a href="#popup3" data-rel="popup" data-position-to="window" data-transition="fade"><img class="popphoto" src="images/monumentos/imagenes_pop_16_3.jpg" alt="Cáceres, España" style="width:32%"></a>
+<div data-role="popup" id="popup1" data-overlay-theme="a" data-theme="d" data-corners="false">
+    <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a><img class="popphoto" src="images/monumentos/imagenes_pop_16_1.jpg" style="max-height:512px;" alt="Cáceres, España">
+</div>
+<div data-role="popup" id="popup2" data-overlay-theme="a" data-theme="d" data-corners="false">
+    <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a><img class="popphoto" src="images/monumentos/imagenes_pop_16_2.jpg" style="max-height:512px;" alt="Cáceres, España">
+</div>
+<div data-role="popup" id="popup3" data-overlay-theme="a" data-theme="d" data-corners="false">
+    <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a><img class="popphoto" src="images/monumentos/imagenes_pop_16_3.jpg" style="max-height:512px;" alt="Cáceres, España">
+ </div>
+</div> <!-- Fin Galeria imagenes popup -->
+
+<div data-role="footer">
+	<div class="ui-grid-b">
+    <div class="ui-block-b">
+    <a href="15.html"  data-ajax="false" data-transition="fade" data-icon="arrow-l" data-iconpos="left" data-role="button" data-theme="a" data-inline="true">anterior</a>
+    </div>
+    <div class="ui-block-b">
+    <h4 align="center">AudioCicerone de Cáceres</h4>
+    </div>
+    <div class="ui-block-b">
+      <div align="right"><a href="17.html"  data-ajax="false" data-transition="fade" data-icon="arrow-r" data-iconpos="right" data-role="button" data-theme="a" data-inline="true">siguiente</a></div>
+    </div>
+    </div>
+	</div>
+</div>
+</body>
+</html>

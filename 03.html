@@ -1,0 +1,176 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="utf-8">
+<title>AudioGuiaCicerone 03 Torre de los Púlpitos y Arco de la Estrella</title>
+<!-- style player -->
+<link rel="stylesheet" href="skin/circle.skin/circle.player.css">
+<!-- FIN style player -->
+<link href="css/jquery.mobile.theme-1.3.2.min.css" rel="stylesheet" type="text/css"/>
+<!-- style propio -->
+<link href="css/CiceGrisMarron.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="themes/AudioguiaCicerone.min.css" />
+<!-- FIN style propio -->
+<link href="css/jquery.mobile.structure-1.3.2.min.css" rel="stylesheet" type="text/css"/>
+<!-- Extra Codiqa features -->
+<link rel="stylesheet" href="css/codiqa.ext.css"> 
+<script src="js/jquery-1.6.4.min.js" type="text/javascript"></script>
+<script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+<!-- Extra Codiqa features -->
+  <script src="js/codiqa.ext.js"></script>
+<script src="map/jquery.mobile-1.3.2.min.map" type="text/javascript"></script>
+<script src="js/jquery.mobile-1.3.2.min.js" type="text/javascript"></script>
+<script src="js/background_adaptable.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<!-- Player -->
+<script type="text/javascript" src="js/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="js/jquery.transform2d.js"></script>
+<script type="text/javascript" src="js/jquery.grab.js"></script>
+<script type="text/javascript" src="js/mod.csstransforms.min.js"></script>
+<script type="text/javascript" src="js/circle.player.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+
+$(document).ready(function(){
+
+	/*
+	 * Instance CirclePlayer inside jQuery doc ready
+	 *
+	 * CirclePlayer(jPlayerSelector, media, options)
+	 *   jPlayerSelector: String - The css selector of the jPlayer div.
+	 *   media: Object - The media object used in jPlayer("setMedia",media).
+	 *   options: Object - The jPlayer options.
+	 *
+	 * Multiple instances must set the cssSelectorAncestor in the jPlayer options. Defaults to "#cp_container_1" in CirclePlayer.
+	 *
+	 * The CirclePlayer uses the default supplied:"m4a, oga" if not given, which is different from the jPlayer default of supplied:"mp3"
+	 * Note that the {wmode:"window"} option is set to ensure playback in Firefox 3.6 with the Flash solution.
+	 * However, the OGA format would be used in this case with the HTML solution.
+	 */
+
+	var myCirclePlayer = new CirclePlayer("#jquery_jplayer_1",
+	{
+		m4a: "https://dl.dropboxusercontent.com/u/4103763/audiosCICE/Mezclado/3%20ok.mp3",
+		oga: ""
+	}, {
+		cssSelectorAncestor: "#cp_container_1",
+		swfPath: "js",
+		wmode: "window",
+		keyEnabled: true
+	});
+});
+//]]>
+</script>
+<!-- Fin Player -->
+</head> 
+<body>
+<div data-role="page" id="pageM03" style="background-image:url(images/fondos_papel.jpg)" data-ajax="false">
+<div data-role="header" data-position="fixed">
+    <div id="menuprincipal" data-role="navbar" data-iconos="top" class="menubar">
+            <ul>
+                <li>
+                    <a href="index.html" data-ajax="false" data-transition="fade" data-theme="a" data-icon="star"
+                    class="ui-btn-active ui-state-persist">
+                        AudioGuía
+                    </a>
+                </li>
+                <li>
+                    <a href="glosario.html" data-ajax="false" data-transition="fade" data-theme="a" data-icon="gear">
+                        Glosario
+                    </a>
+                </li>
+                <li>
+                    <a href="mapa.html" data-ajax="false" data-transition="fade" data-theme="a" data-icon="bars">
+                        Mapa
+                    </a>
+                </li>
+                <li>
+                    <a href="info.html" data-ajax="false" data-transition="fade" data-theme="a" data-icon="info">
+                        info
+                    </a>
+                </li>
+            </ul>
+        </div>		
+	</div>
+<div class="ui-grid-a">
+    <div class="ui-block-a"><div id="jquery_jplayer_1" class="cp-jplayer"></div>
+
+			<!-- The container for the interface can go where you want to display it. Show and hide it as you need. -->
+
+			<div id="cp_container_1" class="cp-container">
+				<div class="cp-buffer-holder"> <!-- .cp-gt50 only needed when buffer is > than 50% -->
+					<div class="cp-buffer-1"></div>
+					<div class="cp-buffer-2"></div>
+				</div>
+				<div class="cp-progress-holder"> <!-- .cp-gt50 only needed when progress is > than 50% -->
+					<div class="cp-progress-1"></div>
+					<div class="cp-progress-2"></div>
+				</div>
+				<div class="cp-circle-control"></div>
+				<ul class="cp-controls">
+					<li><a class="cp-play" tabindex="1">play</a></li>
+					<li><a class="cp-pause" style="display:none;" tabindex="1">pause</a></li> <!-- Needs the inline style here, or jQuery.show() uses display:inline instead of display:block -->
+				</ul>
+			</div>
+</div>
+    <div class="ui-block-b"><div class="" id="EntradillaInicio" style="height:150px">
+      <h1 class="ui-btn-down-a">03 Torre de los Púlpitos y Arco de la Estrella</h1>
+    </div>
+    <a href="#popupMap" data-rel="popup" data-role="button" data-theme="a" data-inline="true" data-transition="pop">Ver a pie de calle</a>
+<div data-role="popup" id="popupMap" data-overlay-theme="a" data-theme="a" data-corners="false" data-tolerance="15,15">
+
+    <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Cerrar</a>
+
+    <iframe src="mapSV_03.html" data-ajax="false" width="480" height="400" seamless></iframe>
+    </div>
+    </div>
+</div>
+<!-- /grid-a -->
+<div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4>Recomendaciones</h4>
+        <p>Puerta de<strong> entrada principal </strong>a<strong> intramuros</strong></p></div>
+        <div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4>Ver texto de Torre de los Púlpitos y Arco de la Estrella</h4>
+        <p>Situada a la derecha de las escaleras nos encontramos con la conocida como <strong>Torre de los Púlpitos</strong>. Torre de dimensiones cuadradas y más pequeña que las de Bujaco y la de la Yerba, presenta basamento de sillería. Las tres primeras hiladas, dado el tamaño de los sillares y su aparejo, no parecen pertenecer al mismo momento constructivo que el resto de la torre y son, por tanto, anteriores.</p>
+        <p>Todos los autores fechan su construcción en los <strong>siglos XIV o XV</strong>, relacionando incluso su edificación con la apertura, a escasos metros, de la llamada <strong>Puerta Nueva</strong>. Basándonos en la ubicación de la torre, prácticamente equidistante de las de Bujaco y Yerba, en sus dimensiones en planta, y en la disposición constructiva de su parte inferior, creemos que en este lugar debió de emplazarse un cubo de origen islámico.</p>
+        <p>El conocido como <strong>Arco de la Estrella</strong> no era una puerta de entrada a la ciudad de la muralla almohade. Aparece citado a finales de la Edad Media como <strong>Puerta Nueva</strong> sobre la cual se situaba una capilla con la imagen en lienzo de la Virgen de la Estrella realizada por Lucas Holguín en 1587.</p>
+        <p>Ante la importancia que fue tomando este acceso desde la plaza del mercado, se tuvo que realizar una ampliación de la puerta; así, en 1726 el maestro salmantino <strong>Manuel de Larra y Churriguera</strong> realizo esta magnífica obra de ingeniería en<a href="#esviaje" data-rel="popup" data-role="button" data-theme="e" data-inline="true" data-mini="true" data-transition="pop" data-icon="info">esviaje</a>, de gran monumentalidad, al gusto barroco, que facilitó desde entonces el tránsito de carrozas y carretas de uno a otro lado de la cerca. Sobre el arco se eleva un pequeño tabernáculo de estilo neoclásico con otra imagen de la Virgen de la Estrella, de ahí el nombre actual.</p>
+        <p>En esta puerta el 30 de junio de 1477 la reina <strong>Isabel la Católica</strong> juró conservar y defender los <strong>Fueros, Privilegios y Libertades de la Villa</strong>. Corona el arco, extramuros, el <strong>escudo de Cáceres</strong>.</p>
+        <div data-role="popup" id="esviaje">
+    <p>Oblicuidad de la superficie de un muro o del eje de una bóveda respecto al frente de la obra de que forman parte.</p>
+</div>
+
+    </ul>
+    </div>
+<!-- inicio Galeria imagenes popup -->
+<div data-role="content">
+<a href="#popup1" data-rel="popup" data-position-to="window" data-transition="fade"><img class="popphoto" src="images/monumentos/imagenes_pop_03_1.jpg" alt="Cáceres, España" style="width:32%"></a>
+<a href="#popup2" data-rel="popup" data-position-to="window" data-transition="fade"><img class="popphoto" src="images/monumentos/imagenes_pop_03_2.jpg" alt="Cáceres, España" style="width:32%"></a>
+<a href="#popup3" data-rel="popup" data-position-to="window" data-transition="fade"><img class="popphoto" src="images/monumentos/imagenes_pop_03_2.jpg" alt="Cáceres, España" style="width:32%"></a>
+<div data-role="popup" id="popup1" data-overlay-theme="a" data-theme="d" data-corners="false">
+    <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a><img class="popphoto" src="images/monumentos/imagenes_pop_03_1.jpg" style="max-height:512px;" alt="Cáceres, España">
+</div>
+<div data-role="popup" id="popup2" data-overlay-theme="a" data-theme="d" data-corners="false">
+    <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a><img class="popphoto" src="images/monumentos/imagenes_pop_03_2.jpg" style="max-height:512px;" alt="Cáceres, España">
+</div>
+<div data-role="popup" id="popup3" data-overlay-theme="a" data-theme="d" data-corners="false">
+    <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a><img class="popphoto" src="images/monumentos/imagenes_pop_03_2.jpg" style="max-height:512px;" alt="Cáceres, España">
+ </div>
+</div> <!-- Fin Galeria imagenes popup -->
+
+<div data-role="footer">
+	   <div class="ui-grid-b">
+    <div class="ui-block-b">
+    <a href="02.html"  data-ajax="false" data-transition="fade" data-icon="arrow-l" data-iconpos="left" data-role="button" data-theme="a" data-inline="true">anterior</a>
+    </div>
+    <div class="ui-block-b">
+    <h4 align="center">AudioCicerone de Cáceres</h4>
+    </div>
+    <div class="ui-block-b">
+      <div align="right"><a href="04.html"  data-ajax="false" data-transition="fade" data-icon="arrow-r" data-iconpos="right" data-role="button" data-theme="a" data-inline="true">siguiente</a></div>
+    </div>
+    </div>
+	</div>
+</div>
+</body>
+</html>

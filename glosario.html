@@ -1,0 +1,373 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="utf-8">
+<title>AudioGuiaCicerone</title>
+<!-- style player -->
+<link rel="stylesheet" href="skin/circle.skin/circle.player.css">
+<!-- FIN style player -->
+<link href="css/jquery.mobile.theme-1.3.2.min.css" rel="stylesheet" type="text/css"/>
+<!-- style propio -->
+<link rel="stylesheet" href="themes/AudioguiaCicerone.min.css" />
+<link href="css/CiceGrisMarron.css" rel="stylesheet" type="text/css">
+<!-- FIN style propio -->
+<link href="css/jquery.mobile.structure-1.3.2.min.css" rel="stylesheet" type="text/css"/>
+<!-- Extra Codiqa features -->
+<link rel="stylesheet" href="css/codiqa.ext.css"> 
+<script src="js/jquery-1.6.4.min.js" type="text/javascript"></script>
+<script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+<!-- Extra Codiqa features -->
+  <script src="js/codiqa.ext.js"></script>
+<script src="map/jquery.mobile-1.3.2.min.map" type="text/javascript"></script>
+<script src="js/jquery.mobile-1.3.2.min.js" type="text/javascript"></script>
+<script src="js/background_adaptable.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<!-- Player -->
+<script type="text/javascript" src="js/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="js/jquery.transform2d.js"></script>
+<script type="text/javascript" src="js/jquery.grab.js"></script>
+<script type="text/javascript" src="js/mod.csstransforms.min.js"></script>
+<script type="text/javascript" src="js/circle.player.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+
+$(document).ready(function(){
+
+	/*
+	 * Instance CirclePlayer inside jQuery doc ready
+	 *
+	 * CirclePlayer(jPlayerSelector, media, options)
+	 *   jPlayerSelector: String - The css selector of the jPlayer div.
+	 *   media: Object - The media object used in jPlayer("setMedia",media).
+	 *   options: Object - The jPlayer options.
+	 *
+	 * Multiple instances must set the cssSelectorAncestor in the jPlayer options. Defaults to "#cp_container_1" in CirclePlayer.
+	 *
+	 * The CirclePlayer uses the default supplied:"m4a, oga" if not given, which is different from the jPlayer default of supplied:"mp3"
+	 * Note that the {wmode:"window"} option is set to ensure playback in Firefox 3.6 with the Flash solution.
+	 * However, the OGA format would be used in this case with the HTML solution.
+	 */
+
+	var myCirclePlayer = new CirclePlayer("#jquery_jplayer_1",
+	{
+		m4a: "https://dl.dropboxusercontent.com/u/4103763/audiosCICE/Mezclado/0%20ok.mp3",
+		oga: ""
+	}, {
+		cssSelectorAncestor: "#cp_container_1",
+		swfPath: "js",
+		wmode: "window",
+		keyEnabled: true
+	});
+});
+//]]>
+</script>
+<!-- Fin Player -->
+</head> 
+<body>
+<div data-role="page" id="pageGLO">
+  <div data-role="header" data-position="fixed">
+		<div id="menuprincipal" data-role="navbar" data-iconpos="top" class="menubar">
+            <ul>
+                <li>
+                    <a href="index.html" data-ajax="false" data-transition="fade" data-theme="a" data-icon="star">
+                        AudioGuía
+                    </a>
+                </li>
+                <li>
+                    <a href="#" data-transition="fade" data-theme="a" data-icon="gear" class="ui-btn-active ui-state-persist">
+                        Glosario
+                    </a>
+                </li>
+                <li>
+                    <a href="mapa.html" data-ajax="false" data-transition="fade" data-theme="a" data-icon="bars">
+                        Mapa
+                    </a>
+                </li>
+                <li>
+                    <a href="info.html" data-ajax="false" data-transition="fade" data-theme="a" data-icon="info">
+                        info
+                    </a>
+                </li>
+            </ul>
+        </div>
+</div>
+<div data-role="content" style="background-image:url(https://dl.dropboxusercontent.com/u/4103763/imagesCICE/fondos_papelmini.jpg)">
+  <h3 class="ui-btn-down-a" align="justify">Glosario de términos utilizados en AudioGuía</h3>
+  <p align="center" class="ui-btn-down-e">Usted encontrará un popup en los textos de cada pista en que aparezcan estos términos y un link en cada descripción de este glosario indicando en que pistas se encuentran</p>
+<div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4 id="ALABASTRO">ALABASTRO</h4>
+        <p align="justify">Variedad de piedra blanca, no muy dura, compacta, a veces translúcida, de apariencia marmórea, que se usa para hacer esculturas o elementos de decoración arquitectónica.</p>
+        <p align="justify"><strong>Este término es utilizado en las pistas:</strong></p>
+        <a href="14.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 14</a>
+    </ul>
+</div>
+<div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4 id="ALBARRANA">ALBARRANA</h4>
+        <p align="justify">Cada una de las torres que antiguamente se ponían a trechos en las murallas, a modo de baluartes muy fuertes. Fueron los almohades los que comenzaron a utilizar este tipo de torres que siempre estaban adelantadas al lienzo de muralla y unidas a ella por un paso superior. Con ello la defensa era aún más fuerte y los enemigos poco podían hacer ante este sistema defensivo.</p>
+        <p align="justify"><strong>Este término es utilizado en las pistas:</strong></p>
+        <a href="01.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 01</a>
+        <a href="04.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 04</a>
+        <a href="26.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 26</a>
+    </ul>
+</div>
+<div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4 id="ALFIZ">ALFIZ</h4>
+        <p align="justify">Montura resaltada en el muro que, en la arquitectura árabe, encuadra los arcos de puertas y ventanas, arrancando bien de las impostas o bien del suelo.</p>
+        <p align="justify"><strong>Este término es utilizado en las pistas:</strong></p>
+        <a href="09.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 09</a>
+        <a href="10.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 10</a>
+        <a href="13.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 13</a>
+        <a href="20.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 20</a>
+        <a href="21.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 21</a>
+        <a href="28.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 28</a>
+    </ul>
+</div>
+<div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4 id="ARCOSOLIO">ARCOSOLIO</h4>
+        <p align="justify">Arco que, a manera de nicho, alberga un sepulcro generalmente incrustado en la pared. Su uso aparece en la época imperial romana.</p>
+        <p align="justify"><strong>Este término es utilizado en las pistas:</strong></p>
+        <a href="21.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 21</a>
+    </ul>
+</div>
+<div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4 id="ARRABÁ">ARRABÁ</h4>
+        <p align="justify">Adorno que suele circunscribir el arco de las puertas y ventanas de estilo árabe.</p>
+        <p align="justify"><strong>Este término es utilizado en las pistas:</strong></p>
+        <a href="15.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 15</a>
+    </ul>
+</div>
+<div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4 id="ASPILLERA">ASPILLERA</h4>
+        <p align="justify">Abertura larga y estrecha en un muro para disparar por ella para permitir la defensa protegiendo al defensor.</p>
+        <p align="justify"><strong>Este término es utilizado en las pistas:</strong></p>
+        <a href="13.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 13</a>
+    </ul>
+</div>
+<div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4 id="BALAUSTRADA">BALAUSTRADA</h4>
+        <p align="justify">Conjunto de columnas pequeñas que con los barandales forman las barandillas o antepechos de balcones, azoteas, corredores y escaleras.</p>
+        <p align="justify"><strong>Este término es utilizado en las pistas:</strong></p>
+        <a href="16.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 16</a>
+    </ul>
+</div>
+<div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4 id="BORLÓN">BORLÓN</h4>
+        <p align="justify">Tela de lino y algodón sembrada de borlitas.</p>
+        <p align="justify"><strong>Este término es utilizado en las pistas:</strong></p>
+        <a href="14.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 14</a>
+    </ul>
+</div>
+<div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4 id="CARPANEL">CARPANEL, ARCO</h4>
+        <p align="justify">El que consta de varias porciones de circunferencia tangentes entre sí y trazadas desde distintos centros.</p>
+        <p align="justify"><strong>Este término es utilizado en las pistas:</strong></p>
+        <a href="19.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 19</a>
+        <a href="21.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 21</a>
+    </ul>
+</div>
+<div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4 id="CONTRAFUERTES">CONTRAFUERTES</h4>
+        <p align="justify">Construcción destinada a contrarrestar el excesivo empuje sufrido por una pared.</p>
+        <p align="justify"><strong>Este término es utilizado en las pistas:</strong></p>
+        <a href="19.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 19</a>
+    </ul>
+</div>
+<div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4 id="CRESTERÍA">CRESTERÍA</h4>
+        <p align="justify">adorno continuo calado, de piedra, metal o cerámica, que se utilizó en la Edad Media y en el Renacimiento para rematar las partes altas de los edificios.</p>
+        <p align="justify"><strong>Este término es utilizado en las pistas:</strong></p>
+        <a href="09.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 09</a>
+    </ul>
+</div>
+<div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4 id="CRUZLATINA">CRUZ LATINA</h4>
+        <p align="justify">Corresponde al diseño utilizado en las iglesias en las que el brazo mayor, que se alinea con el pórtico principal, el atrio, el altar mayor y el ábside, tiene mayor longitud que el brazo menor o transepto; mientras que cuando ambas tienen la misma longitud se habla de planta de cruz griega.</p>
+        <p align="justify"><strong>Este término es utilizado en las pistas:</strong></p>
+        <a href="11.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 11</a>
+    </ul>
+</div>
+<div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4 id="CUARTELES">CUARTELES</h4>
+        <p align="justify">Cada una de las cuatro partes de un escudo dividido en cruz. Cada una de las divisiones o subdivisiones de un escudo.</p>
+        <p align="justify"><strong>Este término es utilizado en las pistas:</strong></p>
+        <a href="02.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 02</a>
+        <a href="07.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 07</a>
+        <a href="10.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 12</a>
+        <a href="22.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 22</a>
+    </ul>
+</div>
+<div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4 id="ENTABLAMENTO">ENTABLAMENTO</h4>
+        <p align="justify">Conjunto de piezas que gravitan inmediatamente sobre las columnas en la arquitectura arquitrabada. Se dividen en tres secciones: arquitrabe,friso y cornisa.</p>
+        <p align="justify"><strong>Este término es utilizado en las pistas:</strong></p>
+        <a href="12.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 12</a>
+    </ul>
+</div>
+<div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4 id="ESPADAÑA">ESPADAÑA</h4>
+        <p align="justify">Pared elevada sobre la fachada, que sirve de campanario. Suele poseer uno o más vanos donde se sitúan las campanas.</p>
+        <p align="justify"><strong>Este término es utilizado en las pistas:</strong></p>
+        <a href="21.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 21</a>
+    </ul>
+</div>
+<div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4 id="ESVIAJE">ESVIAJE</h4>
+        <p align="justify">Oblicuidad de la superficie de un muro o del eje de una bóveda respecto al frente de la obra de que forman parte.</p>
+        <p align="justify"><strong>Este término es utilizado en las pistas:</strong></p>
+        <a href="03.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 03</a>
+    </ul>
+</div>
+<div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4 id="EVANGELIO">EVANGELIO, LADO DEL</h4>
+        <p align="justify">En las iglesias, mirando hacia el altar, el lado del Evangelio está situado a nuestra izquierda mientras que el lado de la Epístola es el que queda a nuestra derecha.</p>
+        <p align="justify"><strong>Este término es utilizado en las pistas:</strong></p>
+        <a href="02.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 02</a>
+        <a href="19.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 19</a>
+    </ul>
+</div>
+<div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4 id="JARRETERA">JARRETERA</h4>
+        <p align="justify">Liga con su hebilla, con que se ata la media o el calzón por el jarrete o la corva de la pierna.</p>
+        <p align="justify"><strong>Este término es utilizado en las pistas:</strong></p>
+        <a href="14.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 14</a>
+    </ul>
+</div>
+<div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4 id="LAMBREQUINES">LAMBREQUINES</h4>
+        <p align="justify">Adorno, generalmente en forma de hojas de acanto, que baja de lo alto del casco y rodea el escudo. Representa las cintas con que se adornaba el yelmo, o la tela fija en él para defender la cabeza de los rayos del sol.</p>
+        <p align="justify"><strong>Este término es utilizado en las pistas:</strong></p>
+        <a href="09.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 09</a>
+        <a href="13.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 13</a>
+    </ul>
+</div>
+<div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4 id="MAINEL">MAINEL</h4>
+        <p align="justify">Columna o columnas interiores de un vano con múltiples aberturas.</p>
+        <p align="justify"><strong>Este término es utilizado en las pistas:</strong></p>
+        <a href="09.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 09</a>
+        <a href="27.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 27</a>
+    </ul>
+</div>
+<div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4 id="MAMPOSTERÍA">MAMPOSTERÍA</h4>
+        <p align="justify">Fábrica de piedra sin labrar o con labra tosca, que se apareja o dispone de modo irregular. Cada una de las piedras recibe el nombre de mampuesto.</p>
+        <p align="justify"><strong>Este término es utilizado en las pistas:</strong></p>
+        <a href="04.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 04</a>
+        <a href="08.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 08</a>
+        <a href="11.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 11</a>
+        <a href="15.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 15</a>
+        <a href="20.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 20</a>
+        <a href="22.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 22</a>
+        <a href="26.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 26</a>
+    </ul>
+</div>
+<div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4 id="MATACAN">MATACAN</h4>
+        <p align="justify">Obra voladiza en lo alto de un muro, de una torre o de una puerta fortificada, con parapeto y con suelo aspillerado, para observar y hostilizar al enemigo.</p>
+        <p align="justify"><strong>Este término es utilizado en las pistas:</strong></p>
+        <a href="09.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 09</a>
+        <a href="13.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 13</a>
+        <a href="14.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 14</a>
+        <a href="16.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 16</a>
+        <a href="27.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 27</a>
+    </ul>
+</div>
+<div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4 id="MENSULONES">MENSULONES</h4>
+        <p align="justify">Elemento sobresaliente de un muro que sostiene alguna pieza escultórica o arquitectónica.</p>
+        <p align="justify"><strong>Este término es utilizado en las pistas:</strong></p>
+        <a href="02.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 02</a>
+        <a href="13.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 14</a>
+        <a href="14.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 14</a>
+    </ul>
+</div>
+<div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4 id="MERLONES">MERLONES</h4>
+        <p align="justify">Remate de las torres que servía para la defensa de los individuos cuando utilizaban las armas en el combate. El hueco entre merlones son conocidos como cañoneras.</p>
+        <p align="justify"><strong>Este término es utilizado en las pistas:</strong></p>
+        <a href="02.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 02</a>
+        <a href="20.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 20</a>
+        <a href="26.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 26</a>
+    </ul>
+</div>
+<div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4 id="MUDÉJAR">MUDÉJAR</h4>
+        <p align="justify">Musulmán que vivía en zona cristiana sin verse obligado a cambiar de religión a cambio de tributo económico. El Arte Mudéjar es el estilo arquitectónico que floreció en España desde el siglo XIII hasta el XVI, caracterizado por la conservación de elementos del arte cristiano y el empleo de la ornamentación árabe.</p>
+        <p align="justify"><strong>Este término es utilizado en las pistas:</strong></p>
+        <a href="15.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 15</a>
+        <a href="27.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 27</a>
+    </ul>
+</div>
+<div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4 id="PARTELUZ">PARTELUZ</h4>
+        <p align="justify">Pequeña columna que divide la luz de una ventana o puerta.</p>
+        <p align="justify"><strong>Este término es utilizado en las pistas:</strong></p>
+        <a href="15.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 15</a>
+    </ul>
+</div>
+<div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4 id="PIEDERECHO">PIE DERECHO</h4>
+        <p align="justify">Cualquiera de los elementos verticales que constituyen el armazón o esqueleto de una pared o tabique.</p>
+        <p align="justify"><strong>Este término es utilizado en las pistas:</strong></p>
+        <a href="17.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 17</a>
+    </ul>
+</div>
+<div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4 id="PINÁCULO">PINÁCULO</h4>
+        <p align="justify">Remate en la arquitectura gótica y, por extensión en otros estilos, adorno terminal, piramidal o cónico.</p>
+        <p align="justify"><strong>Este término es utilizado en las pistas:</strong></p>
+        <a href="19.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 19</a>
+    </ul>
+</div>
+<div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4 id="ROCALLA">ROCALLA</h4>
+        <p align="justify">Decoración que imita contornos de piedras y de conchas.</p>
+        <p align="justify"><strong>Este término es utilizado en las pistas:</strong></p>
+        <a href="02.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 02</a>
+    </ul>
+</div>
+<div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4 id="SILLAREJO">SILLAREJO</h4>
+        <p align="justify">Piedra labrada de una construcción, especialmente la que no atraviesa todo el grueso del muro y no tiene sino un paramento o dos cuando más.</p>
+        <p align="justify"><strong>Este término es utilizado en las pistas:</strong></p>
+        <a href="02.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 02</a>
+        <a href="26.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 26</a>
+        <a href="27.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 27</a>
+    </ul>
+</div>
+<div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4 id="SOGAYTIZÓN">SOGA Y TIZÓN</h4>
+        <p align="justify">Disposición del aparejo al exterior caracterizado por alternar hiladas de sillares por sus caras longitudinales con sillares por sus caras menores o transversales.</p>
+        <p align="justify"><strong>Este término es utilizado en las pistas:</strong></p>
+        <a href="04.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 04</a>
+    </ul>
+</div>
+<div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4 id="TERCELETES">TERCELETES</h4>
+        <p align="justify">cada uno de los nervios de una bóveda de crucería que va desde cada uno de los ángulos de apoyo, donde se une con los nervios o arcos diagonales, hasta las claves secundarias de la bóveda uniéndose de dos en dos para formar un nervio secundario que va hasta la clave central.</p>
+        <p align="justify"><strong>Este término es utilizado en las pistas:</strong></p>
+        <a href="19.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 19</a>
+    </ul>
+</div>
+<div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4 id="TESTERO">TESTERO</h4>
+        <p align="justify">Pared de un edificio que se encuentra frente a la entrada principal. También se le relaciona con el muro de la cabecera de la iglesia.</p>
+        <p align="justify"><strong>Este término es utilizado en las pistas:</strong></p>
+        <a href="19.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 19</a>
+    </ul>
+</div>
+<div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4 id="YELMO">YELMO</h4>
+        <p align="justify">Parte de la armadura antigua que resguardaba la cabeza y el rostro, y se componía de morrión, visera y babera.</p>
+        <p align="justify"><strong>Este término es utilizado en las pistas:</strong></p>
+        <a href="09.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 09</a>
+        <a href="13.html" data-role="button" data-ajax="false" data-theme="a" data-inline="true">Pista 13</a>
+    </ul>
+</div>
+</div>
+<div data-role="footer">
+	  <h4>Audio Cicerone de Cáceres</h4>
+	</div>
+</div>
+</body>
+</html>

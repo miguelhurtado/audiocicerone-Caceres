@@ -1,0 +1,853 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="utf-8">
+<title>AudioGuiaCicerone</title>
+<!-- style player -->
+<link rel="stylesheet" href="skin/circle.skin/circle.player.css">
+<!-- FIN style player -->
+<link href="css/jquery.mobile.theme-1.3.2.min.css" rel="stylesheet" type="text/css"/>
+<!-- style propio -->
+<link rel="stylesheet" href="themes/AudioguiaCicerone.min.css" />
+<link href="css/CiceGrisMarron.css" rel="stylesheet" type="text/css">
+<!-- FIN style propio -->
+<link href="css/jquery.mobile.structure-1.3.2.min.css" rel="stylesheet" type="text/css"/>
+<!-- Extra Codiqa features -->
+<link rel="stylesheet" href="css/codiqa.ext.css"> 
+<script src="js/jquery-1.6.4.min.js" type="text/javascript"></script>
+<script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+<!-- Extra Codiqa features -->
+  <script src="js/codiqa.ext.js"></script>
+<script src="map/jquery.mobile-1.3.2.min.map" type="text/javascript"></script>
+<script src="js/jquery.mobile-1.3.2.min.js" type="text/javascript"></script>
+<script src="js/background_adaptable.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<!-- Player -->
+<script type="text/javascript" src="js/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="js/jquery.transform2d.js"></script>
+<script type="text/javascript" src="js/jquery.grab.js"></script>
+<script type="text/javascript" src="js/mod.csstransforms.min.js"></script>
+<script type="text/javascript" src="js/circle.player.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+
+$(document).ready(function(){
+
+	/*
+	 * Instance CirclePlayer inside jQuery doc ready
+	 *
+	 * CirclePlayer(jPlayerSelector, media, options)
+	 *   jPlayerSelector: String - The css selector of the jPlayer div.
+	 *   media: Object - The media object used in jPlayer("setMedia",media).
+	 *   options: Object - The jPlayer options.
+	 *
+	 * Multiple instances must set the cssSelectorAncestor in the jPlayer options. Defaults to "#cp_container_1" in CirclePlayer.
+	 *
+	 * The CirclePlayer uses the default supplied:"m4a, oga" if not given, which is different from the jPlayer default of supplied:"mp3"
+	 * Note that the {wmode:"window"} option is set to ensure playback in Firefox 3.6 with the Flash solution.
+	 * However, the OGA format would be used in this case with the HTML solution.
+	 */
+
+	var myCirclePlayer = new CirclePlayer("#jquery_jplayer_1",
+	{
+		m4a: "https://dl.dropboxusercontent.com/u/4103763/audiosCICE/Mezclado/0%20ok.mp3",
+		oga: ""
+	}, {
+		cssSelectorAncestor: "#cp_container_1",
+		swfPath: "js",
+		wmode: "window",
+		keyEnabled: true
+	});
+});
+//]]>
+</script>
+<!-- Fin Player -->
+</head> 
+<body>
+<div data-role="page" id="inicio" style="background-image:url(https://dl.dropboxusercontent.com/u/4103763/imagesCICE/fondo_inicio_cc.jpg)">
+<div data-role="header" data-position="fixed">
+    <div id="menuprincipal" data-role="navbar" data-iconos="top" class="menubar">
+            <ul>
+                <li>
+                    <a href="#" data-transition="fade" data-theme="a" data-icon="star"
+                    class="ui-btn-active ui-state-persist">
+                        AudioGuía
+                    </a>
+                </li>
+                <li>
+                    <a href="glosario.html" data-ajax="false" data-transition="fade" data-theme="a" data-icon="gear">
+                        Glosario
+                    </a>
+                </li>
+                <li>
+                    <a href="mapa.html" data-ajax="false" data-transition="fade" data-theme="a" data-icon="bars">
+                        Mapa
+                    </a>
+                </li>
+                <li>
+                    <a href="info.html" data-ajax="false" data-transition="fade" data-theme="a" data-icon="info">
+                        info
+                    </a>
+                </li>
+            </ul>
+        </div>
+</div>
+<div class="ui-grid-a">
+    <div class="ui-block-a"><div id="jquery_jplayer_1" class="cp-jplayer"></div>
+
+			<!-- The container for the interface can go where you want to display it. Show and hide it as you need. -->
+
+			<div id="cp_container_1" class="cp-container">
+				<div class="cp-buffer-holder"> <!-- .cp-gt50 only needed when buffer is > than 50% -->
+					<div class="cp-buffer-1"></div>
+					<div class="cp-buffer-2"></div>
+				</div>
+				<div class="cp-progress-holder"> <!-- .cp-gt50 only needed when progress is > than 50% -->
+					<div class="cp-progress-1"></div>
+					<div class="cp-progress-2"></div>
+				</div>
+				<div class="cp-circle-control"></div>
+				<ul class="cp-controls">
+					<li><a class="cp-play" tabindex="1">play</a></li>
+					<li><a class="cp-pause" style="display:none;" tabindex="1">pause</a></li> <!-- Needs the inline style here, or jQuery.show() uses display:inline instead of display:block -->
+				</ul>
+			</div></div>
+    <div class="ui-block-b"><div class="" id="EntradillaInicio" style="height:200px">
+      <h1 class="ui-btn-down-a">Bienvenidos a Cáceres</h1>
+      <h3 class="ui-btn-down-a">Ciudad Patrimonio de la Humanidad</h3>
+    </div></div>
+</div>
+<!-- /grid-a -->
+<div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4>Recomendaciones</h4>
+        <p align="justify">Antes de comenzar la visita les damos la enhorabuena por haber elegido esta ciudad cargada de historia. Deléitense con sus <strong>Palacios</strong>, sus <strong>Casas Señoriales</strong>, sus<strong> Iglesias</strong>, sus <strong>calles</strong> por donde han pasado personajes muy importantes de la Historia de España, sin olvidar, por supuesto, a sus amables pobladores que con su simpatía y amabilidad le harán pasar una jornada que nunca olvidaran.</p>
+    </ul>
+</div>
+        <div data-role="collapsible" data-iconpos="right" data-theme="a" data-content-theme="e" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+    <h4>Ver texto de Bienvenida</h4>
+        <p align="justify"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/sc_cc.png" width="70" height="70" alt="escudoCC" style="float:left;margin:10px;">Cáceres fue elegida <strong>Ciudad Patrimonio de la Humanidad</strong> en el año 1986 debido a su gran conjunto monumental histórico-artístico, donde el tiempo parece que se ha detenido para ofrecernos la urbe casi de la misma forma que la conocieron durante los siglos XV al XVIII. A través de la constancia y el trabajo realizado por la Administración autonómica, local y, sobre todo, por sus ciudadanos, nos encontramos ante un conjunto histórico que pasa por ser el <strong>Tercer Conjunto Monumental</strong> europeo declarado por el Consejo de Europa en el año 1968.</p>
+        <p align="justify">Aléjese de nuestro siglo XXI, olvide las preocupaciones actuales y déjese llevar por la <strong>Edad Media, el Renacimiento y el Barroco</strong>, la historia de nuestros antepasados puesta a su disposición, imagínese ataviado al gusto de la época medieval y moderna y disfrute de lo que a partir de ahora va a descubrir con todos sus sentidos sin pensar en nada más.</p>
+        <p align="justify"><strong>Bienvenidos a CÁCERES</strong>.</p>
+    </ul>
+</div>
+<div data-role="content">	
+		<ul data-role="listview" data-divider-theme="a" data-inset="true">
+            <li data-role="list-divider" role="heading">
+            Monumentos y sitios de interés </li>
+            <li data-theme="e">
+                <a href="#pageM" id="Mtodos" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_.jpg" alt="inicio todos" name="ImagmenuTodos" width="80" height="80" id="ImagmenuTodos">
+                    Todos
+                    <span class="ui-li-count">
+                        Ruta completa
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="#pageIGLE" id="Miglesias" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_iglesias.jpg" alt="inicio iglesias" name="ImagmenuIglesias" width="80" height="80" id="ImagmenuIglesias">
+                    Iglesias
+                    <span class="ui-li-count">
+                        Conventos, ermitas
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="#pagePLA" id="Mplazas" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_plazas.jpg" alt="inicio plazas" name="ImagmenuPlazas" width="80" height="80" id="ImagmenuPlazas">
+                    Plazas y Jardines
+                    <span class="ui-li-count">
+                        Espacios públicos
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="#pageMUR" id="Mmuralla" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_muralla.jpg" alt="inicio muralla" name="ImagmenuMuralla" width="80" height="80" id="ImagmenuMuralla">
+                    Muralla
+                    <span class="ui-li-count">
+                        Torres, Puertas y arcos
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="#pagePALA" id="Mpalacios" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_palacios.jpg" alt="inicio palacios" name="ImagmenuPalacios" width="80" height="80" id="ImagmenuPalacios">
+                    Palacios
+                    <span class="ui-li-count">
+                        Casas señoriales
+                    </span>
+                </a>
+            </li>
+        </ul>		
+	</div>
+
+<div data-role="footer">
+		<h4>AudioGuía Cicerone de Cáceres</h4>
+	</div>
+</div>
+<div data-role="page" id="pageM" style="background-image:url(https://dl.dropboxusercontent.com/u/4103763/imagesCICE/fondos_papelmini.jpg)">
+	<div data-role="header" data-position="fixed">
+		<div id="menuprincipal" data-role="navbar" data-iconpos="top" class="menubar">
+            <ul>
+                <li>
+                    <a href="#inicio" data-transition="fade" data-theme="a" data-icon="star"
+                    class="ui-btn-active ui-state-persist">
+                        AudioGuía
+                    </a>
+                </li>
+                <li>
+                    <a href="#pageGLO" data-transition="fade" data-theme="a" data-icon="gear">
+                        Glosario
+                    </a>
+                </li>
+                <li>
+                    <a href="#pageMAPA" data-transition="fade" data-theme="a" data-icon="bars">
+                        Mapa
+                    </a>
+                </li>
+                <li>
+                    <a href="#pageINFO" data-transition="fade" data-theme="a" data-icon="info">
+                        info
+                    </a>
+                </li>
+            </ul>
+        </div>
+</div>
+<div data-role="content">	
+	  <ul data-role="listview" data-divider-theme="a" data-inset="true">
+            <li data-role="list-divider" role="heading">
+                Selecciona para ver y oir detalle
+            </li>
+            <li data-theme="e">
+                <a href="01.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_01.jpg" alt="inicio01" name="Imagmenu01" width="80" height="80" id="Imagmenu01">
+                    01 Plaza Mayor
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="02.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_02.jpg" alt="inicio02" name="Imagmenu02" width="80" height="80" id="Imagmenu02">
+                    02 Ermita de la Paz y Torre de Bujaco
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="03.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_03.jpg" alt="inicio03" name="Imagmenu03" width="80" height="80" id="Imagmenu03">
+                    03 Torre de los Púlpitos y Arco de la Estrella
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="04.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_04.jpg" alt="inicio04" name="Imagmenu04" width="80" height="80" id="Imagmenu04">
+                    04 Muralla
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="05.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_05.jpg" alt="inicio05" name="Imagmenu05" width="80" height="80" id="Imagmenu05">
+                    05 Plaza de Santa María
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="06.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_06.jpg" alt="inicio06" name="Imagmenu06" width="80" height="80" id="Imagmenu06">
+                    06 Iglesia-Concatedral de Santa María
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="07.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_07.jpg" alt="inicio07" name="Imagmenu07" width="80" height="80" id="Imagmenu07">
+                    07 Palacio Episcopal
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="08.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_08.jpg" alt="inicio08" name="Imagmenu08" width="80" height="80" id="Imagmenu08">
+                    08 Palacio y Torre de Carvajal
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="09.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_09.jpg" alt="inicio09" name="Imagmenu09" width="80" height="80" id="Imagmenu09">
+                    09 Palacio de los Golfines de Abajo
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="10.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_10.jpg" alt="inicio10" name="Imagmenu10" width="80" height="80" id="Imagmenu10">
+                    10 Plaza de San Jorge y Casa de los Becerra
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="11.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_11.jpg" alt="inicio11" name="Imagmenu11" width="80" height="80" id="Imagmenu11">
+                    11 Iglesia de San Francisco Javier
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="12.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_12.jpg" alt="inicio12" name="Imagmenu12" width="80" height="80" id="Imagmenu12">
+                    12 Convento de la Compañía de Jesús
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="13.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_13.jpg" alt="inicio13" name="Imagmenu13" width="80" height="80" id="Imagmenu13">
+                    13 Casa del Sol o de los Solís
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="14.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_14.jpg" alt="inicio14" name="Imagmenu14" width="80" height="80" id="Imagmenu14">
+                    14 Casa de los Saavedra y Torre de los Sande
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="15.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_15.jpg" alt="inicio15" name="Imagmenu15" width="80" height="80" id="Imagmenu15">
+                    15 Casa Mudéjar
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="16.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_16.jpg" alt="inicio16" name="Imagmenu16" width="80" height="80" id="Imagmenu16">
+                    16 Palacio de los Golfines de Arriba
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="17.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_17.jpg" alt="inicio17" name="Imagmenu17" width="80" height="80" id="Imagmenu17">
+                    17 Puerta de Mérida
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="18.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_18.jpg" alt="inicio18" name="Imagmenu18" width="80" height="80" id="Imagmenu18">
+                    18 Palacio del Comendador de Alcuéscar o de los Marqueses de Torreorgaz
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="19.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_19.jpg" alt="inicio19" name="Imagmenu19" width="80" height="80" id="Imagmenu19">
+                    19 Iglesia de San Mateo
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="20.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_20.jpg" alt="inicio20" name="Imagmenu20" width="80" height="80" id="Imagmenu20">
+                    20 Torre de las Cigüeñas-Casa de los Cáceres-Ovando
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="21.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_21.jpg" alt="inicio21" name="Imagmenu21" width="80" height="80" id="Imagmenu21">
+                    21 Convento de San Pablo
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="22.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_22.jpg" alt="inicio22" name="Imagmenu22" width="80" height="80" id="Imagmenu22">
+                    22 Casa de las Veletas
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="23.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_23.jpg" alt="inicio23" name="Imagmenu23" width="80" height="80" id="Imagmenu23">
+                    23 Torre de los Pozos
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="24.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_24.jpg" alt="inicio24" name="Imagmenu24" width="80" height="80" id="Imagmenu24">
+                    24 Ermita de San Antonio y Barrio Viejo Judío
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="25.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_25.jpg" alt="inicio25" name="Imagmenu25" width="80" height="80" id="Imagmenu25">
+                    25 Arco del Cristo, Puerta del Río o del Concejo
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="26.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_26.jpg" alt="inicio26" name="Imagmenu26" width="80" height="80" id="Imagmenu26">
+                    26 Torre de la Puerta del Concejo
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="27.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_27.jpg" alt="inicio27" name="Imagmenu27" width="80" height="80" id="Imagmenu27">
+                    27 Torre de Espaderos y antigua Puerta de Coria
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="28.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_28.jpg" alt="inicio28" name="Imagmenu28" width="80" height="80" id="Imagmenu28">
+                    28 Palacio de Toledo-Moctezuma
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="29.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_29.jpg" alt="inicio29" name="Imagmenu29" width="80" height="80" id="Imagmenu29">
+                    29 Fin de ruta monumental intramuros
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>		
+<div data-role="footer">
+		<h4>AudioGuía Cicerone de Cáceres</h4>
+	</div>
+</div>
+<div data-role="page" id="pageIGLE" style="background-image:url(https://dl.dropboxusercontent.com/u/4103763/imagesCICE/fondos_papelmini.jpg)">
+	<div data-role="header" data-position="fixed">
+		<div id="menuprincipal" data-role="navbar" data-iconpos="top" class="menubar">
+            <ul>
+                <li>
+                    <a href="#inicio" data-transition="fade" data-theme="a" data-icon="star"
+                    class="ui-btn-active ui-state-persist">
+                        AudioGuía
+                    </a>
+                </li>
+                <li>
+                    <a href="#pageGLO" data-transition="fade" data-theme="a" data-icon="gear">
+                        Glosario
+                    </a>
+                </li>
+                <li>
+                    <a href="#pageMAPA" data-transition="fade" data-theme="a" data-icon="bars">
+                        Mapa
+                    </a>
+                </li>
+                <li>
+                    <a href="#pageINFO" data-transition="fade" data-theme="a" data-icon="info">
+                        info
+                    </a>
+                </li>
+            </ul>
+        </div>
+</div>
+<div data-role="content">	
+	  <ul data-role="listview" data-divider-theme="a" data-inset="true">
+            <li data-role="list-divider" role="heading">
+                Selecciona para ver y oir detalle
+            </li>
+            <li data-theme="e">
+                <a href="02.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_02.jpg" alt="inicio02" name="Imagmenu02" width="80" height="80" id="Imagmenu02">
+                    02 Ermita de la Paz y Torre de Bujaco
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="06.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_06.jpg" alt="inicio06" name="Imagmenu06" width="80" height="80" id="Imagmenu06">
+                    06 Iglesia-Concatedral de Santa María
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="11.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_11.jpg" alt="inicio11" name="Imagmenu11" width="80" height="80" id="Imagmenu11">
+                    11 Iglesia de San Francisco Javier
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="12.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_12.jpg" alt="inicio12" name="Imagmenu12" width="80" height="80" id="Imagmenu12">
+                    12 Convento de la Compañía de Jesús
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="19.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_19.jpg" alt="inicio19" name="Imagmenu19" width="80" height="80" id="Imagmenu19">
+                    19 Iglesia de San Mateo
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="21.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_21.jpg" alt="inicio21" name="Imagmenu21" width="80" height="80" id="Imagmenu21">
+                    21 Convento de San Pablo
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="24.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_24.jpg" alt="inicio24" name="Imagmenu24" width="80" height="80" id="Imagmenu24">
+                    24 Ermita de San Antonio y Barrio Viejo Judío
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>		
+<div data-role="footer">
+		<h4>AudioGuía Cicerone de Cáceres</h4>
+	</div>
+</div>
+<div data-role="page" id="pagePLA" style="background-image:url(https://dl.dropboxusercontent.com/u/4103763/imagesCICE/fondos_papelmini.jpg)">
+	<div data-role="header" data-position="fixed">
+		<div id="menuprincipal" data-role="navbar" data-iconpos="top" class="menubar">
+            <ul>
+                <li>
+                    <a href="#inicio" data-transition="fade" data-theme="a" data-icon="star"
+                    class="ui-btn-active ui-state-persist">
+                        AudioGuía
+                    </a>
+                </li>
+                <li>
+                    <a href="#pageGLO" data-transition="fade" data-theme="a" data-icon="gear">
+                        Glosario
+                    </a>
+                </li>
+                <li>
+                    <a href="#pageMAPA" data-transition="fade" data-theme="a" data-icon="bars">
+                        Mapa
+                    </a>
+                </li>
+                <li>
+                    <a href="#pageINFO" data-transition="fade" data-theme="a" data-icon="info">
+                        info
+                    </a>
+                </li>
+            </ul>
+        </div>
+</div>
+<div data-role="content">	
+	  <ul data-role="listview" data-divider-theme="a" data-inset="true">
+            <li data-role="list-divider" role="heading">
+                Selecciona para ver y oir detalle
+            </li>
+            <li data-theme="e">
+                <a href="01.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_01.jpg" alt="inicio01" name="Imagmenu01" width="80" height="80" id="Imagmenu01">
+                    01 Plaza Mayor
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="05.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_05.jpg" alt="inicio05" name="Imagmenu05" width="80" height="80" id="Imagmenu05">
+                    05 Plaza de Santa María
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="10.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_10.jpg" alt="inicio10" name="Imagmenu10" width="80" height="80" id="Imagmenu10">
+                    10 Plaza de San Jorge y Casa de los Becerra
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>		
+<div data-role="footer">
+		<h4>AudioGuía Cicerone de Cáceres</h4>
+	</div>
+</div>
+<div data-role="page" id="pageMUR" style="background-image:url(https://dl.dropboxusercontent.com/u/4103763/imagesCICE/fondos_papelmini.jpg)">
+	<div data-role="header" data-position="fixed">
+		<div id="menuprincipal" data-role="navbar" data-iconpos="top" class="menubar">
+            <ul>
+                <li>
+                    <a href="#inicio" data-transition="fade" data-theme="a" data-icon="star"
+                    class="ui-btn-active ui-state-persist">
+                        AudioGuía
+                    </a>
+                </li>
+                <li>
+                    <a href="#pageGLO" data-transition="fade" data-theme="a" data-icon="gear">
+                        Glosario
+                    </a>
+                </li>
+                <li>
+                    <a href="#pageMAPA" data-transition="fade" data-theme="a" data-icon="bars">
+                        Mapa
+                    </a>
+                </li>
+                <li>
+                    <a href="#pageINFO" data-transition="fade" data-theme="a" data-icon="info">
+                        info
+                    </a>
+                </li>
+            </ul>
+        </div>
+</div>
+<div data-role="content">	
+	  <ul data-role="listview" data-divider-theme="a" data-inset="true">
+            <li data-role="list-divider" role="heading">
+                Selecciona para ver y oir detalle
+            </li>
+            <li data-theme="e">
+                <a href="02.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_02.jpg" alt="inicio02" name="Imagmenu02" width="80" height="80" id="Imagmenu02">
+                    02 Torre de Bujaco y Ermita de la Paz 
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="03.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_03.jpg" alt="inicio03" name="Imagmenu03" width="80" height="80" id="Imagmenu03">
+                    03 Torre de los Púlpitos y Arco de la Estrella
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="04.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_04.jpg" alt="inicio04" name="Imagmenu04" width="80" height="80" id="Imagmenu04">
+                    04 Muralla
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="17.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_17.jpg" alt="inicio17" name="Imagmenu17" width="80" height="80" id="Imagmenu17">
+                    17 Puerta de Mérida
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="23.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_23.jpg" alt="inicio23" name="Imagmenu23" width="80" height="80" id="Imagmenu23">
+                    23 Torre de los Pozos
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="25.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_25.jpg" alt="inicio25" name="Imagmenu25" width="80" height="80" id="Imagmenu25">
+                    25 Arco del Cristo, Puerta del Río o del Concejo
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="26.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_26.jpg" alt="inicio26" name="Imagmenu26" width="80" height="80" id="Imagmenu26">
+                    26 Torre de la Puerta del Concejo
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="27.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_27.jpg" alt="inicio27" name="Imagmenu27" width="80" height="80" id="Imagmenu27">
+                    27 Torre de Espaderos y antigua Puerta de Coria
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>		
+<div data-role="footer">
+		<h4>AudioGuía Cicerone de Cáceres</h4>
+	</div>
+</div>
+<div data-role="page" id="pagePALA" style="background-image:url(https://dl.dropboxusercontent.com/u/4103763/imagesCICE/fondos_papelmini.jpg)">
+	<div data-role="header" data-position="fixed">
+		<div id="menuprincipal" data-role="navbar" data-iconpos="top" class="menubar">
+            <ul>
+                <li>
+                    <a href="#inicio" data-transition="fade" data-theme="a" data-icon="star"
+                    class="ui-btn-active ui-state-persist">
+                        AudioGuía
+                    </a>
+                </li>
+                <li>
+                    <a href="#pageGLO" data-transition="fade" data-theme="a" data-icon="gear">
+                        Glosario
+                    </a>
+                </li>
+                <li>
+                    <a href="#pageMAPA" data-transition="fade" data-theme="a" data-icon="bars">
+                        Mapa
+                    </a>
+                </li>
+                <li>
+                    <a href="#pageINFO" data-transition="fade" data-theme="a" data-icon="info">
+                        info
+                    </a>
+                </li>
+            </ul>
+        </div>
+</div>
+<div data-role="content">	
+	  <ul data-role="listview" data-divider-theme="a" data-inset="true">
+            <li data-role="list-divider" role="heading">
+                Selecciona para ver y oir detalle
+            </li>
+            <li data-theme="e">
+                <a href="07.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_07.jpg" alt="inicio07" name="Imagmenu07" width="80" height="80" id="Imagmenu07">
+                    07 Palacio Episcopal
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="08.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_08.jpg" alt="inicio08" name="Imagmenu08" width="80" height="80" id="Imagmenu08">
+                    08 Palacio y Torre de Carvajal
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="09.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_09.jpg" alt="inicio09" name="Imagmenu09" width="80" height="80" id="Imagmenu09">
+                    09 Palacio de los Golfines de Abajo
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="10.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_10.jpg" alt="inicio10" name="Imagmenu10" width="80" height="80" id="Imagmenu10">
+                    10 Casa de los Becerra y Plaza de San Jorge
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="13.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_13.jpg" alt="inicio13" name="Imagmenu13" width="80" height="80" id="Imagmenu13">
+                    13 Casa del Sol o de los Solís
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="14.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_14.jpg" alt="inicio14" name="Imagmenu14" width="80" height="80" id="Imagmenu14">
+                    14 Casa de los Saavedra y Torre de los Sande
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+
+            </li>
+            <li data-theme="e">
+                <a href="15.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_15.jpg" alt="inicio15" name="Imagmenu15" width="80" height="80" id="Imagmenu15">
+                    15 Casa Mudéjar
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="16.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_16.jpg" alt="inicio16" name="Imagmenu16" width="80" height="80" id="Imagmenu16">
+                    16 Palacio de los Golfines de Arriba
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="18.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_18.jpg" alt="inicio18" name="Imagmenu18" width="80" height="80" id="Imagmenu18">
+                    18 Palacio del Comendador de Alcuéscar o de los Marqueses de Torreorgaz
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="20.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_20.jpg" alt="inicio20" name="Imagmenu20" width="80" height="80" id="Imagmenu20">
+                    20 Casa de los Cáceres-Ovando y Torre de las Cigüeñas
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="22.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_22.jpg" alt="inicio22" name="Imagmenu22" width="80" height="80" id="Imagmenu22">
+                    22 Casa de las Veletas
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+            <li data-theme="e">
+                <a href="28.html" data-ajax="false" data-transition="slide"><img src="https://dl.dropboxusercontent.com/u/4103763/imagesCICE/menus/imag_menus_80x80_28.jpg" alt="inicio28" name="Imagmenu28" width="80" height="80" id="Imagmenu28">
+                    28 Palacio de Toledo-Moctezuma
+                    <span class="ui-li-count">
+                        ver y oir
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>		
+<div data-role="footer">
+		<h4>AudioGuía Cicerone de Cáceres</h4>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.audiocicerone.AudioguiaCaceresMonumental"
+        version   = "1.0.0">
+
+    <name>AudioGuía Cicerone de Cáceres. Patrimonio de la Humanidad</name>
+
+    <description>
+La AudioGuía Turística-Histórica de "Cáceres Ciudad Monumental" está recomendada para utilizar in-situ. Es una aplicación jquery para todo tipo de dispositivos que recoge información histórico-artística de los edificios más importantes de la ciudad monumental de Cáceres.  
+
+En esta audioguia ofrecemos treinta pistas de sonido y transcripciones con definiciones en glosarios de términos, ubicaciones, recomendaciones y propuestas de rutas. Todo el contenido con vistas a pie de calle con Street View de Google.
+
+A través de esta audioguia podrán seguir las características artísticas e históricas de estos edificios. Para ello se ha utilizado un lenguaje en donde algunas palabras técnicas artísticas han sido elegidas para que todos podamos tener más conocimientos sobre Historia del Arte.
+
+Las pistas pueden ser escuchadas infinitamente y están apoyadas por la edición de texto de cada una de ellas, al igual que un glosario de términos artísticos.
+    </description>
+
+    <author href="http://www.audiocicerone.com" email="info@audiocicerone.com">
+        perianet.com 
+    </author>
+
+    <!--
+        Habilitar permisos individuales de API aquí.
+         Se requiere el permiso "dispositivo" para el evento 'deviceready'.
+    -->
+    <feature name="http://api.phonegap.com/1.0/device" />
+
+    <!--
+        Si no desea que los permisos que se añade a su aplicación, agregue el
+         siguiente etiqueta a tu config.xml, de todas maneras tendrá la INTERNET
+         permiso de su aplicación, que requiere PhoneGap.
+    -->
+    <preference name="permissions"                value="none"/>
+
+    <!-- Personaliza tu aplicación y la plataforma con el elemento de preferencias. -->
+    <preference name="phonegap-version"           value="3.3.0" />          <!-- todo: Versión actual de PhoneGap -->
+    <preference name="orientation"                value="default" />        <!-- todos los medios : por defecto , tanto horizontal y vertical están activadas -->
+    <preference name="target-device"              value="universal" />      <!-- todo: posibles valores teléfono , tableta, o universal -->
+    <preference name="fullscreen"                 value="true" />           <!-- todos : oculta la barra de estado situada en la parte superior de la pantalla -->
+    <preference name="webviewbounce"              value="true" />           <!-- ios : controlar si la pantalla ' rebota ' al desplazado más allá de la parte superior -->
+    <preference name="prerendered-icon"           value="true" />           <!-- ios : si el icono es prerendered , iOS no se aplicará está brillo al icono de la aplicación en la pantalla principal del usuario -->
+    <preference name="stay-in-webview"            value="false" />          <!-- ios: enlaces externos se abrirán en el navegador por defecto, 'true' usaría el webview las vidas de aplicaciones en -->
+    <preference name="ios-statusbarstyle"         value="black-opaque" />   <!-- ios: negro -transparente aparecerá negro porque el webview PhoneGap no pasa por debajo de la barra de estado -->
+    <preference name="detect-data-types"          value="true" />           <!-- ios: controla si los tipos de datos (. tales como teléfono y no hay fechas) se activan automáticamente en enlaces por el sistema -->
+    <preference name="exit-on-suspend"            value="false" />          <!-- ios: si se define como true , la aplicación terminará cuando se pulsa el botón Inicio -->
+    <preference name="show-splash-screen-spinner" value="true" />           <!-- ios: si se establece en false, la ruleta no aparecerá en la pantalla de bienvenida durante la aplicación de carga -->
+    <preference name="auto-hide-splash-screen"    value="true" />           <!-- ios: si se establece en false, la pantalla de presentación debe ser ocultado mediante una API Javascript -->
+    <preference name="disable-cursor"             value="false" />          <!-- blackberry: evita un mouse-icon/cursor se muestre en la aplicación -->
+    <preference name="android-minSdkVersion"      value="7" />              <!-- android : Versión MIN SDK admite en el dispositivo de destino . Versión MAX está en blanco de forma predeterminada. -->
+    <preference name="android-installLocation"    value="auto" />           <!-- android : app ubicación de instalación . 'auto' elegirá . ' internalOnly ' es la memoria del dispositivo . ' preferExternal ' es SDCard. -->
+
+    <!-- Plugins can also be added here. -->
+    <!--
+        <gap:plugin name="Example" />
+        A list of available plugins are available at https://build.phonegap.com/docs/plugins
+    -->
+
+    <!-- Define app icon for each platform. -->
+    <icon src="icon.png" />
+    <icon src="images/res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:density="ldpi" />
+    <icon src="images/res/icon/android/icon-48-mdpi.png"   gap:platform="android"    gap:density="mdpi" />
+    <icon src="images/res/icon/android/icon-72-hdpi.png"   gap:platform="android"    gap:density="hdpi" />
+    <icon src="images/res/icon/android/icon-96-xhdpi.png"  gap:platform="android"    gap:density="xhdpi" />
+    <!-- <icon src="images/res/icon/blackberry/icon-80.png"     gap:platform="blackberry" />
+    <icon src="images/res/icon/blackberry/icon-80.png"     gap:platform="blackberry" gap:state="hover"/>
+    <icon src="images/res/icon/ios/icon-57.png"            gap:platform="ios"        width="57" height="57" />
+    <icon src="images/res/icon/ios/icon-72.png"            gap:platform="ios"        width="72" height="72" />
+    <icon src="images/res/icon/ios/icon-57-2x.png"         gap:platform="ios"        width="114" height="114" />
+    <icon src="images/res/icon/ios/icon-72-2x.png"         gap:platform="ios"        width="144" height="144" />
+    <icon src="images/res/icon/webos/icon-64.png"          gap:platform="webos" />
+    <icon src="images/res/icon/windows-phone/icon-48.png"  gap:platform="winphone" />
+    <icon src="images/res/icon/windows-phone/icon-173.png" gap:platform="winphone"   gap:role="background" /> -->
+
+    <!-- Define app splash screen for each platform. -->
+    <gap:splash src="images/res/screen/android/screen-ldpi-portrait.jpg"  gap:platform="android" gap:density="ldpi" />
+    <gap:splash src="images/res/screen/android/screen-mdpi-portrait.jpg"  gap:platform="android" gap:density="mdpi" />
+    <gap:splash src="images/res/screen/android/screen-hdpi-portrait.jpg"  gap:platform="android" gap:density="hdpi" />
+    <gap:splash src="images/res/screen/android/screen-xhdpi-portrait.jpg" gap:platform="android" gap:density="xhdpi" />
+    <!-- <gap:splash src="images/res/screen/blackberry/screen-225.png"         gap:platform="blackberry" />
+    <gap:splash src="images/res/screen/ios/screen-iphone-portrait.png"    gap:platform="ios"     width="320" height="480" />
+    <gap:splash src="images/res/screen/ios/screen-iphone-portrait-2x.png" gap:platform="ios"     width="640" height="960" />
+    <gap:splash src="images/res/screen/ios/screen-ipad-portrait.png"      gap:platform="ios"     width="768" height="1024" />
+    <gap:splash src="images/res/screen/ios/screen-ipad-landscape.png"     gap:platform="ios"     width="1024" height="768" />
+    <gap:splash src="images/res/screen/windows-phone/screen-portrait.jpg" gap:platform="winphone" /> -->
+
+    <!--
+        Definir el acceso a dominios externos.
+
+         acceso> /> - una etiqueta de acceso en blanco deniega el acceso a todos los recursos externos.
+         acceso> origin="*" /> - una etiqueta de acceso comodín permite el acceso a todos los recursos externos.
+
+        Otherwise, you can specify specific domains:
+    -->
+    <access origin="*"/> <!-- allow local pages -->
+    <!--
+        <access origin="http://phonegap.com" />                    - permitir todas las solicitudes seguras al http://phonegap.com/
+        <access origin="http://phonegap.com" subdomains="true" />  - gual que el anterior, pero incluyendo subdominios, como http://build.phonegap.com/
+        <access origin="http://phonegap.com" browserOnly="true" /> - sólo permite http://phonegap.com que se abra el navegador hijo.
+    -->
+
+</widget>

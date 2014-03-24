@@ -51,7 +51,7 @@ $(document).ready(function(){
 	var myCirclePlayer = new CirclePlayer("#jquery_jplayer_1",
 	{
 		m4a: "https://dl.dropboxusercontent.com/u/4103763/audiosCICE/Mezclado/1%20ok.mp3",
-		oga: ""
+		oga: "http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg"
 	}, {
 		cssSelectorAncestor: "#cp_container_1",
 		swfPath: "js",
@@ -64,7 +64,7 @@ $(document).ready(function(){
 <!-- Fin Player -->
 </head> 
 <body>
-<div data-role="page" id="pageM01" style="background-image:src="images/fondos_papel.jpg)" data-ajax="false">
+<div data-role="page" id="pageM01" style="background-image:url(https://dl.dropboxusercontent.com/u/4103763/imagesCICE/fondos_papel.jpg)" data-ajax="false">
 <div data-role="header" data-position="fixed">
     <div id="menuprincipal" data-role="navbar" data-iconos="top" class="menubar">
             <ul>
@@ -75,17 +75,17 @@ $(document).ready(function(){
                     </a>
                 </li>
                 <li>
-                    <a href="glosario.html" data-ajax="false" data-transition="fade" data-theme="a" data-icon="gear">
+                    <a href="index.html#pageGLO" data-ajax="false" data-transition="fade" data-theme="a" data-icon="gear">
                         Glosario
                     </a>
                 </li>
                 <li>
-                    <a href="mapa.html" data-ajax="false" data-transition="fade" data-theme="a" data-icon="bars">
+                    <a href="index.html#pageMAPA" data-ajax="false" data-transition="fade" data-theme="a" data-icon="bars">
                         Mapa
                     </a>
                 </li>
                 <li>
-                    <a href="info.html" data-ajax="false" data-transition="fade" data-theme="a" data-icon="info">
+                    <a href="index.html#pageINFO" data-ajax="false" data-transition="fade" data-theme="a" data-icon="info">
                         info
                     </a>
                 </li>
@@ -159,19 +159,8 @@ $(document).ready(function(){
 </div> <!-- Fin Galeria imagenes popup -->
 
 <div data-role="footer">
- 
-	  
-    <div class="ui-grid-b">
-    <div class="ui-block-b">
-    <a href="index.html#pageM"  data-ajax="false" data-transition="fade" data-icon="arrow-l" data-iconpos="left" data-role="button" data-theme="a" data-inline="true">Ver listado</a>
-    </div>
-    <div class="ui-block-b">
-    <h4 align="center">AudioCicerone de Cáceres</h4>
-    </div>
-    <div class="ui-block-b">
-      <div align="right"><a href="02.html"  data-ajax="false" data-transition="fade" data-icon="arrow-r" data-iconpos="right" data-role="button" data-theme="a" data-inline="true">siguiente</a></div>
-    </div>
-    </div>
+	  <h4>AudioGuía Cicerone de Cáceres</h4>
+	</div>
 </div>
 </body>
 </html>
